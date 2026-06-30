@@ -321,14 +321,14 @@ app.post("/api/parse-documents", upload.array("files", 20), async (req, res) => 
 
 // Configure Vite middleware and static serving
 async function setupServer() {
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production" && !isVercel) {
     console.log("[Server] Registering Vite development middleware...");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
-  } else {
+  } else if (!isVercel) {
     console.log("[Server] Serving production static files from dist...");
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
@@ -342,6 +342,12 @@ async function setupServer() {
   });
 }
 
-setupServer().catch(err => {
-  console.error("Failed to start server:", err);
-});
+// Only call setupServer when not in serverless (Vercel) context
+const isVercel = process.env.VERCEL === '1';
+if (!isVercel) {
+  setupServer().catch(err => {
+    console.error("Failed to start server:", err);
+  });
+}
+
+export default app;
