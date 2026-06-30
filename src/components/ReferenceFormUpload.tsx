@@ -108,8 +108,8 @@ export default function ReferenceFormUpload() {
               disabled={uploading || forms.some(f => f.programName === name)}
               className={`text-xs font-bold px-4 py-2 rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
                 forms.some(f => f.programName === name)
-                  ? 'bg-blue-100 border-blue-300 text-blue-700'
-                  : 'bg-white border-slate-300 text-slate-700 hover:bg-blue-50 hover:border-blue-400'
+                  ? 'bg-crimson/10 border-crimson/30 text-crimson'
+                  : 'bg-white border-slate-300 text-slate-700 hover:bg-crimson/5 hover:border-crimson'
               }`}
             >
               {forms.some(f => f.programName === name) ? (
@@ -131,7 +131,7 @@ export default function ReferenceFormUpload() {
             <input type="text" value={programName}
               onChange={e => setProgramName(e.target.value)}
               placeholder="예) AI 교육, SW 기초..."
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-crimson" />
           </div>
 
           <div className="flex-1 w-full">
@@ -139,12 +139,12 @@ export default function ReferenceFormUpload() {
             <div onDragEnter={handleDrag} onDragOver={handleDrag} onDragLeave={handleDrag} onDrop={handleDrop}
               onClick={() => fileInputRef.current?.click()}
               className={`border-2 border-dashed rounded-lg px-4 py-4 text-center cursor-pointer transition-all duration-200 ${
-                isDragActive ? 'border-blue-500 bg-blue-50/50 scale-[0.99]' : 'border-slate-300 hover:border-blue-400 hover:bg-slate-50/50'
+                isDragActive ? 'border-crimson bg-crimson/5 scale-[0.99]' : 'border-slate-300 hover:border-crimson hover:bg-slate-50/50'
               }`}>
               <input ref={fileInputRef} type="file" accept=".pdf,.hwp,.hwpx" className="hidden"
                 onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
               {selectedFile ? (
-                <span className="text-sm text-blue-600 font-medium flex items-center justify-center gap-1.5">
+                <span className="text-sm text-crimson font-medium flex items-center justify-center gap-1.5">
                   <FileText size={14} /> {selectedFile.name}
                 </span>
               ) : (
@@ -157,7 +157,7 @@ export default function ReferenceFormUpload() {
 
           <button onClick={handleUpload}
             disabled={!programName.trim() || !selectedFile || uploading}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 transition-colors cursor-pointer shrink-0">
+            className="bg-crimson hover:bg-crimson/90 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 transition-colors cursor-pointer shrink-0">
             {uploading ? <Loader2 size={14} className="animate-spin" /> : <Bookmark size={14} />}
             등록
           </button>
@@ -172,11 +172,11 @@ export default function ReferenceFormUpload() {
           <div className="flex flex-wrap gap-2">
             {forms.map(f => (
               <div key={f.programName}
-                className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs">
-                <CheckCircle2 size={12} className="text-blue-600 shrink-0" />
-                <span className="font-medium text-blue-800">{f.programName}</span>
-                <span className="text-blue-400">|</span>
-                <span className="text-blue-600 truncate max-w-[120px]">{f.fileName}</span>
+                className="flex items-center gap-2 bg-crimson/5 border border-crimson/20 rounded-lg px-3 py-1.5 text-xs">
+                <CheckCircle2 size={12} className="text-crimson shrink-0" />
+                <span className="font-medium text-crimson">{f.programName}</span>
+                <span className="text-crimson/60">|</span>
+                <span className="text-crimson truncate max-w-[120px]">{f.fileName}</span>
                 <button onClick={() => removeForm(f.programName)}
                   className="text-slate-400 hover:text-rose-600 ml-1 cursor-pointer">
                   <X size={12} />

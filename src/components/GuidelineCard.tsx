@@ -7,19 +7,19 @@ export default function GuidelineCard() {
       {/* Rules Card */}
       <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
         <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 mb-3">
-          <CheckSquare size={16} className="text-blue-600" />
+          <CheckSquare size={16} className="text-crimson" />
           데이터 정규화 규칙 (Normalization)
         </h3>
         <ul className="space-y-2.5 text-xs text-slate-600">
           <li className="flex gap-2">
-            <span className="font-bold text-blue-600">1. 촬영일 표준화:</span>
+            <span className="font-bold text-crimson">1. 촬영일 표준화:</span>
             <span>
               수업촬영일은 어떤 텍스트 형식 기입이어도 <strong>&apos;YYYY년 MM월 DD일&apos;</strong> 형식으로 정규화됩니다. 
               (예: &quot;5월 12일&quot; 입력 시 현재 시점을 인지하여 <strong>&quot;2026년 05월 12일&quot;</strong>로 보정)
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="font-bold text-blue-600">2. 수강인원:</span>
+            <span className="font-bold text-crimson">2. 수강인원:</span>
             <span>
               수강인원은 숫자만 추출되어 표시됩니다 (예: &quot;30명&quot; → &quot;30&quot;).
             </span>

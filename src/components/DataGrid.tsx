@@ -138,7 +138,7 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
           <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
             추출 데이터 검수 및 수정
             {items.length > 0 && (
-              <span className="text-[11px] font-bold px-2.5 py-0.5 bg-blue-100 text-blue-700 rounded-full">
+              <span className="text-[11px] font-bold px-2.5 py-0.5 bg-crimson/10 text-crimson rounded-full">
                 전체 {items.length}건
               </span>
             )}
@@ -158,7 +158,7 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="검색어 입력..."
-              className="w-full pl-8 pr-3 py-1.5 border border-slate-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full pl-8 pr-3 py-1.5 border border-slate-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-crimson"
             />
           </div>
 
@@ -181,16 +181,7 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
             수동 추가
           </button>
 
-          {items.length > 0 && (
-            <button
-              type="button"
-              onClick={clearAllData}
-              disabled={items.length === 0}
-              className="text-xs px-3 py-1.5 border border-slate-300 rounded hover:bg-slate-50 font-medium text-slate-700 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-            >
-              전체 초기화
-            </button>
-          )}
+          <button
         </div>
       </div>
 
@@ -210,7 +201,7 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
           </div>
           
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-center gap-3">
-            <div className="p-2.5 bg-blue-50 text-blue-700 border border-blue-150 rounded-lg">
+            <div className="p-2.5 bg-crimson/10 text-crimson border border-crimson/20 rounded-lg">
               <CheckCircle size={18} />
             </div>
             <div>
@@ -261,7 +252,7 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
                 return (
                   <tr 
                     key={item.id} 
-                    className={`hover:bg-blue-50 transition-colors ${
+                    className={`hover:bg-crimson/5 transition-colors ${
                       item.status === 'error' ? 'bg-rose-50/30' : itemHasErr ? 'bg-amber-50/20' : ''
                     }`}
                   >
@@ -312,12 +303,12 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
                                   if (e.key === 'Enter') saveEdit(item.id, field);
                                   if (e.key === 'Escape') cancelEdit();
                                 }}
-                                className="border border-slate-300 rounded px-1 py-0.5 text-xs w-full focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="border border-slate-300 rounded px-1 py-0.5 text-xs w-full focus:outline-none focus:ring-1 focus:ring-crimson"
                                 autoFocus
                               />
                               <button 
                                 onClick={() => saveEdit(item.id, field)}
-                                className="bg-blue-600 text-white p-0.5 rounded hover:bg-blue-700"
+                                className="bg-crimson text-white p-0.5 rounded hover:bg-crimson/90"
                               >
                                 <Check size={11} />
                               </button>

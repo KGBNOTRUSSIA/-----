@@ -112,12 +112,12 @@ export default function UploadZone({ onItemsParsed, isProcessing, setIsProcessin
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
         className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-200 ${
-          isDragActive ? 'border-blue-500 bg-blue-50/50 scale-[0.99]' : 'border-slate-300 hover:border-blue-400 hover:bg-slate-50/50'
+          isDragActive ? 'border-crimson bg-crimson/5 scale-[0.99]' : 'border-slate-300 hover:border-crimson hover:bg-slate-50/50'
         }`}
       >
         <input ref={fileInputRef} type="file" multiple accept=".pdf,.hwp,.hwpx" className="hidden" onChange={handleFileChange} disabled={isProcessing} />
         <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-crimson/10 text-crimson rounded-full flex items-center justify-center">
             <Upload size={20} />
           </div>
           <div className="text-center">
@@ -152,7 +152,7 @@ export default function UploadZone({ onItemsParsed, isProcessing, setIsProcessin
             </div>
             <div className="mt-5 flex justify-end">
               <button onClick={triggerUpload} disabled={isProcessing}
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg shadow-sm disabled:bg-slate-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all cursor-pointer">
+                className="w-full sm:w-auto bg-crimson hover:bg-crimson/90 text-white font-bold text-xs px-5 py-2.5 rounded-lg shadow-sm disabled:bg-slate-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all cursor-pointer">
                 {isProcessing ? <><Loader2 size={14} className="animate-spin" /> 문서 파싱 및 분석 중...</> : <><CheckCircle2 size={14} /> 자동 분석 및 정규화 시작</>}
               </button>
             </div>

@@ -17,7 +17,7 @@ export default function StatsPanel({ items, isProcessing, selectedCount }: Stats
       <div>
         <div className="flex justify-between items-start mb-4">
           <h2 className="text-sm font-bold text-slate-700">실시간 처리 현황</h2>
-          <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${isProcessing ? 'bg-blue-100 text-blue-700 animate-pulse' : 'bg-slate-100 text-slate-600'}`}>
+          <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${isProcessing ? 'bg-crimson/10 text-crimson animate-pulse' : 'bg-slate-100 text-slate-600'}`}>
             {isProcessing ? 'ACTIVE' : 'IDLE'}
           </span>
         </div>
@@ -29,7 +29,7 @@ export default function StatsPanel({ items, isProcessing, selectedCount }: Stats
           </div>
           <div className="flex justify-between text-xs">
             <span className="text-slate-500 font-medium">분석 중</span>
-            <span className={`font-semibold ${isProcessing ? 'text-blue-600' : 'text-slate-500'}`}>{isProcessing ? '작업 진행 중' : '0건'}</span>
+            <span className={`font-semibold ${isProcessing ? 'text-crimson' : 'text-slate-500'}`}>{isProcessing ? '작업 진행 중' : '0건'}</span>
           </div>
           <div className="flex justify-between text-xs">
             <span className="text-slate-500 font-medium">분석 완료</span>
@@ -50,7 +50,7 @@ export default function StatsPanel({ items, isProcessing, selectedCount }: Stats
           <span>{progressPercentage}%</span>
         </div>
         <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-          <div className="bg-blue-600 h-full transition-all duration-500 rounded-full"
+          <div className="bg-crimson h-full transition-all duration-500 rounded-full"
             style={{ width: `${Math.max(items.length > 0 ? 5 : 0, progressPercentage)}%` }} />
         </div>
       </div>

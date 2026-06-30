@@ -64,20 +64,20 @@ export default function App() {
   const selectedCount = 0; // passed to StatsPanel
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans">
+    <div className="min-h-screen bg-white text-slate-800 font-sans">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-12 h-12 bg-crimson rounded-xl flex items-center justify-center text-white font-bold text-lg">
               ED
             </div>
             <div>
               <h1 id="app-title" className="text-2xl font-bold text-slate-800 leading-tight tracking-tight">
-                교원 서류 자동 분류 시스템
+                프로그램 서류 자동분류 시스템
               </h1>
               <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold mt-0.5">
-                MVP V1.1 • 교원 신청서 자동 추출 및 엑셀 변환
+                MVP V1.2 • 프로그램 신청서 자동 추출 및 엑셀 변환
               </p>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function App() {
         {/* Section 1: 기준 양식 업로드 */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">1</span>
+            <span className="w-8 h-8 bg-crimson text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">1</span>
             <div>
               <h2 className="text-lg font-bold text-slate-800">기준 양식 업로드</h2>
               <p className="text-xs text-slate-500">프로그램별 신청서 양식을 등록하면 해당 양식에 맞춰 데이터를 추출합니다.</p>
@@ -117,7 +117,7 @@ export default function App() {
         {/* Section 2+3: 서류 파일 업로드 + 실시간 처리 현황 */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">2</span>
+            <span className="w-8 h-8 bg-crimson text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">2</span>
             <div>
               <h2 className="text-lg font-bold text-slate-800">서류 파일 업로드 (HWP, PDF)</h2>
               <p className="text-xs text-slate-500">교원이 제출한 신청서 파일을 업로드하면 자동으로 데이터를 추출합니다.</p>
@@ -143,7 +143,7 @@ export default function App() {
         {/* Section 4: 데이터 검수 및 수정 */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">3</span>
+            <span className="w-8 h-8 bg-crimson text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0">3</span>
             <div>
               <h2 className="text-lg font-bold text-slate-800">데이터 검수 및 수정</h2>
               <p className="text-xs text-slate-500">추출된 데이터를 확인하고 오류를 수정합니다.</p>
