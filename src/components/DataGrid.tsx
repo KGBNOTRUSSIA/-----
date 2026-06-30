@@ -180,8 +180,6 @@ export default function DataGrid({ items, setItems, isProcessing }: DataGridProp
             <Plus size={12} />
             수동 추가
           </button>
-
-          <button
         </div>
       </div>
 
