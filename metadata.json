@@ -1,0 +1,6 @@
+{
+  "name": "교원 신청 서류 자동 분류 및 엑셀 변환 프로그램",
+  "description": "교원이 제출한 프로그램 신청서 파일(HWP, PDF)에서 데이터를 자동 추출 및 정제하고, 검수 및 수정하여 엑셀 파일로 저장하는 시스템입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
